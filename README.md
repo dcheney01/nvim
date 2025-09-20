@@ -12,6 +12,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 ## Set up nvim config
 ```bash
-git clone https://github.com/dcheney01/nvim-config.git
-mv nvim-config ~/.config/nvim
+cd ~/.config/
+git clone https://github.com/dcheney01/nvim.git
 ```
