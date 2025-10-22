@@ -1,4 +1,4 @@
--- Visual Options --
+-- Visua Options --
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -10,6 +10,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 -- Remap Options
+vim.cmd("nnoremap <leader>ep :Explore<cr>")
 vim.cmd("nnoremap <leader>ev :vsplit ~/.config/nvim/lua/vim-options.lua<cr>")
 vim.cmd("nnoremap <leader>sv :source ~/.config/nvim/lua/vim-options.lua<cr>")
 
