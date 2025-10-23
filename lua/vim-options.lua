@@ -14,12 +14,17 @@ vim.cmd("nnoremap <leader>ep :Explore<cr>")
 vim.cmd("nnoremap <leader>ev :vsplit ~/.config/nvim/lua/vim-options.lua<cr>")
 vim.cmd("nnoremap <leader>sv :source ~/.config/nvim/lua/vim-options.lua<cr>")
 
--- Add quotes to words in normal mode
-vim.cmd("nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel")
-vim.cmd("nnoremap <leader>\" viw<esc>a\"<esc>bi\"<esc>lel")
+-- Add single quotes around the word under the cursor
+vim.cmd("nnoremap <leader>' viwdi'<esc>pa'<esc>")
 
-vim.cmd("vnoremap <leader>\" <esc>a\"<esc>'<i\"<esc>")
-vim.cmd("vnoremap <leader>' <esc>a'<esc>'<i'<esc>")
+-- Add double quotes around the word under the cursor
+vim.cmd("nnoremap <leader>\" viwdi\"<esc>pa\"<esc>")
+
+vim.cmd("vnoremap <leader>\" d<esc>i\"<esc>pa\"<esc>")
+vim.cmd("vnoremap <leader>' d<esc>i'<esc>pa'<esc>")
 
 vim.cmd("nnoremap H ^")
 vim.cmd("nnoremap L $")
+
+vim.cmd("inoremap jk <esc>")
+vim.cmd("inoremap <esc> <nop>")
