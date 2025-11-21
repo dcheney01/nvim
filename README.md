@@ -3,6 +3,8 @@
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz && rm nvim-linux-x86_64.tar.gz
+
+sudo apt install clang-format black  # install cpp and python formatters
 ```
 
 Then add to path in .bashrc or similar if not already present:

@@ -7,7 +7,7 @@ vim.cmd("set number")
 
 -- Leader Options
 vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+vim.g.maplocalleader = ','
 
 -- Remap Options
 vim.cmd("nnoremap <leader>ep :Explore<cr>")
@@ -28,3 +28,10 @@ vim.cmd("nnoremap L $")
 
 vim.cmd("inoremap jk <esc>")
 vim.cmd("inoremap <esc> <nop>")
+
+
+vim.cmd("autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>")
+vim.cmd("autocmd FileType python nnoremap <buffer> <localleader>u ^x<esc>")
+
+vim.cmd("autocmd FileType cpp nnoremap <buffer> <localleader>c I//<esc>")
+vim.cmd("autocmd FileType cpp nnoremap <buffer> <localleader>u ^xx<esc>")
