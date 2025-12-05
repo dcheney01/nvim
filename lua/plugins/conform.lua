@@ -8,14 +8,15 @@ return {
       },
       formatters_by_ft = {
         python = { "black" },
-        c = { "clang_format" },
-        cpp = { "clang_format" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
       },
       formatters = {
         black = {
           prepend_args = { "--line-length", "80" },
         },
         clang_format = {
+          command = "clang-format",
           prepend_args = function(ctx)
             local cwd = ctx.cwd or vim.fn.getcwd()
             local has_file = vim.loop.fs_stat(cwd .. "/.clang-format") or vim.loop.fs_stat(cwd .. "/_clang-format")
