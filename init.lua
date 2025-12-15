@@ -7,22 +7,21 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.cursorline = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 vim.opt.confirm = true
 vim.opt.list = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- #######################################################################
 -- Misc ##################################################################
 -- #######################################################################
 
 -- Clipboard (syncs to OS clipboard)
-vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.o.clipboard = 'unnamedplus'
-  end,
+vim.api.nvim_create_autocmd("UIEnter", {
+	callback = function()
+		vim.o.clipboard = "unnamedplus"
+	end,
 })
-
 
 -- #######################################################################
 -- Leaders ###############################################################
@@ -37,21 +36,27 @@ vim.keymap.set("n", "<leader>ep", ":Explore<CR>")
 vim.keymap.set("n", "<leader>ev", ":vsplit $MYVIMRC<CR>")
 vim.keymap.set("n", "<leader>sv", ":source $MYVIMRC<CR>")
 
+-- Disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
-vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
-vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
-vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
-vim.keymap.set({ 't', 'i' }, '<A-l>', '<C-\\><C-n><C-w>l')
-vim.keymap.set({ 'n' }, '<A-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
-vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
+vim.keymap.set({ "t", "i" }, "<A-h>", "<C-\\><C-n><C-w>h")
+vim.keymap.set({ "t", "i" }, "<A-j>", "<C-\\><C-n><C-w>j")
+vim.keymap.set({ "t", "i" }, "<A-k>", "<C-\\><C-n><C-w>k")
+vim.keymap.set({ "t", "i" }, "<A-l>", "<C-\\><C-n><C-w>l")
+vim.keymap.set({ "n" }, "<A-h>", "<C-w>h")
+vim.keymap.set({ "n" }, "<A-j>", "<C-w>j")
+vim.keymap.set({ "n" }, "<A-k>", "<C-w>k")
+vim.keymap.set({ "n" }, "<A-l>", "<C-w>l")
 
 -- Add quotes around word under cursor
 vim.keymap.set("n", "<leader>'", [[viwdi'<esc>pa'<esc>]])
-vim.keymap.set("n", "<leader>\"", [[viwdi"<esc>pa"<esc>]])
+vim.keymap.set("n", '<leader>"', [[viwdi"<esc>pa"<esc>]])
 
-vim.keymap.set("v", "<leader>\"", [[d<esc>i"<esc>pa"<esc>]])
+vim.keymap.set("v", '<leader>"', [[d<esc>i"<esc>pa"<esc>]])
 vim.keymap.set("v", "<leader>'", [[d<esc>i'<esc>pa'<esc>]])
 
 -- Line navigation
@@ -68,11 +73,11 @@ vim.keymap.set("i", "<esc>", "<nop>")
 
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  callback = function()
-    vim.hl.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
 
 -- #######################################################################
@@ -83,3 +88,4 @@ require("config.lazy")
 -- #######################################################################
 -- Current Pain Points ###################################################
 -- #######################################################################
+--
